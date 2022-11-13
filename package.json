@@ -1,0 +1,26 @@
+{
+  "name": "mongo_restaurant_menu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iam-davidvm/mongo_restaurant_menu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iam-davidvm/mongo_restaurant_menu/issues"
+  },
+  "homepage": "https://github.com/iam-davidvm/mongo_restaurant_menu#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.7.2"
+  }
+}

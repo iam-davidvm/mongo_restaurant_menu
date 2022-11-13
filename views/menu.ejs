@@ -1,0 +1,120 @@
+<%- include('partials/head') %> 
+
+<h1>Menu</h1>
+            <div class="add-dish">
+                <a href="/dish/add">
+                    <i class="fas fa-plus-circle"></i><span> Gerecht</span></a>
+            </div>
+
+            <section class="menu-course">
+                <h2>Voorgerecht</h2>
+                <div class="add-dish">
+                    <a href="/dish/add?type=voorgerecht">
+                        <i class="fas fa-plus-circle"></i><span> Voorgerecht</span></a>
+                </div>
+                <%
+                    const voorgerechten = dishes.filter(dish => dish.course === 'voorgerecht'); 
+                    for (let voorgerecht of voorgerechten) {
+                %>
+                <div class="menu-item" data-dishid="<%= voorgerecht._id %>">
+                            <p class="menu-item-title"><%= voorgerecht.name %></p>
+                            <p class="menu-item-ingredients">
+                                <% const ingredientsList = voorgerecht.ingredients.map( (ingredient, index) => {
+                                    if (index === 0) {
+                                        return ingredient;
+                                    } else {
+                                        return ` - ${ingredient}`;
+                                    }
+                                }).join('');%>
+                                <%= ingredientsList %>
+                            </p>
+                            <div class="menu-item-details">
+                                <p class="menu-item-price">
+                                    <% let price = parseFloat(voorgerecht.price).toFixed(2);
+                                    %>
+                                    &euro;<%= price %></p>
+                                <div class="menu-item-admin">
+                                    <i class="fas fa-pen"></i>
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </div>
+                </div>
+
+                <% } %>
+            </section>
+
+            <section class="menu-course">
+                <h2>Hoofdgerecht</h2>
+                <div class="add-dish">
+                    <a href="/dish/add?type=hoofdgerecht">
+                        <i class="fas fa-plus-circle"></i><span> Hoofdgerecht</span></a>
+                </div>
+                <%
+                    const hoofdgerechten = dishes.filter(dish => dish.course === 'hoofdgerecht'); 
+                    for (let hoofdgerecht of hoofdgerechten) {
+                %>
+                <div class="menu-item" data-dishid="<%= hoofdgerecht._id %>">
+                            <p class="menu-item-title"><%= hoofdgerecht.name %></p>
+                            <p class="menu-item-ingredients">
+                                <% const ingredientsList = hoofdgerecht.ingredients.map( (ingredient, index) => {
+                                    if (index === 0) {
+                                        return ingredient;
+                                    } else {
+                                        return ` - ${ingredient}`;
+                                    }
+                                }).join('');%>
+                                <%= ingredientsList %>
+                            </p>
+                            <div class="menu-item-details">
+                                <p class="menu-item-price">
+                                    <% let price = parseFloat(hoofdgerecht.price).toFixed(2);
+                                    %>
+                                    &euro;<%= price %></p>
+                                <div class="menu-item-admin">
+                                    <i class="fas fa-pen"></i>
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </div>
+                </div>
+
+                <% } %>
+            </section>
+
+            <section class="menu-course">
+                <h2>Dessert</h2>
+                <div class="add-dish">
+                    <a href="/dish/add?type=dessert">
+                        <i class="fas fa-plus-circle"></i><span> Dessert</span></a>
+                </div>
+                <%
+                    const desserten = dishes.filter(dish => dish.course === 'dessert'); 
+                    for (let dessert of desserten) {
+                %>
+                <div class="menu-item" data-dishid="<%= dessert._id %>">
+                            <p class="menu-item-title"><%= dessert.name %></p>
+                            <p class="menu-item-ingredients">
+                                <% const ingredientsList = dessert.ingredients.map( (ingredient, index) => {
+                                    if (index === 0) {
+                                        return ingredient;
+                                    } else {
+                                        return ` - ${ingredient}`;
+                                    }
+                                }).join('');%>
+                                <%= ingredientsList %>
+                            </p>
+                            <div class="menu-item-details">
+                                <p class="menu-item-price">
+                                    <% let price = parseFloat(dessert.price).toFixed(2);
+                                    %>
+                                    &euro;<%= price %></p>
+                                <div class="menu-item-admin">
+                                    <i class="fas fa-pen"></i>
+                                    <i class="fas fa-trash"></i>
+                                </div>
+                            </div>
+                </div>
+
+                <% } %>
+            </section>
+
+<%- include('partials/footer') %> 
