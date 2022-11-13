@@ -9,6 +9,9 @@
 :root {
   --clr-pri-red: hsl(347, 100%, 33%);
   --clr-pri-gol: hsl(19, 100%, 73%);
+
+  --fnt-dis: 'Libre Baskerville', serif;
+  --fnt-bod: 'Raleway', sans-serif;
 }
 
 img {
@@ -38,6 +41,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-family: var(--fnt-bod);
 }
 
 nav input[type='checkbox'] {
@@ -82,12 +86,18 @@ h2 {
 h1 {
   text-transform: uppercase;
   color: var(--clr-pri-red);
-  margin: 10px 0 70px;
+  font-family: var(--fnt-dis);
+  margin: 125px 0 70px;
 }
 
 h2 {
-  font-family: sans-serif;
+  font-family: var(--fnt-bod);
   margin: 60px 0 20px;
+}
+
+main,
+footer {
+  font-family: var(--fnt-bod);
 }
 
 .menu-item {
@@ -97,11 +107,11 @@ h2 {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    'title title title price'
-    'ingredients ingredients ingredients price';
+    'title title title details'
+    'ingredients ingredients ingredients details';
   align-items: end;
   justify-items: stretch;
-  row-gap: 5px;
+  gap: 5px 10px;
 }
 
 .menu-item-title {
@@ -115,12 +125,54 @@ h2 {
   grid-area: ingredients;
 }
 
+.menu-item-details {
+  grid-area: details;
+  display: grid;
+  grid-template-columns: 2fr auto;
+  justify-items: end;
+  align-items: end;
+}
+
 .menu-item-price {
-  grid-area: price;
-  font-size: 22px;
+  font-size: 28px;
   text-align: right;
 }
 
+.menu-item-admin {
+  margin-left: 10px;
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  row-gap: 10px;
+}
+
+.menu-item-admin .fas {
+  cursor: pointer;
+  color: hsla(0, 0%, 0%, 0.4);
+  transition: color 270ms ease-in-out;
+}
+
+.menu-item-admin .fas:hover {
+  color: hsla(0, 0%, 0%, 1);
+}
+
+footer {
+  margin: 125px 0 35px;
+  line-height: 1.4;
+}
+
+footer .container {
+  display: flex;
+  column-gap: 30px;
+}
+
+.footer-title {
+  font-weight: 700;
+  line-height: 2.6;
+}
+
+/* RESPONSIVE */
 @media (max-width: 665px) {
   .nav-menu {
     display: none;
@@ -152,5 +204,6 @@ h2 {
   }
   .hamburger {
     display: block;
+    cursor: pointer;
   }
 }
