@@ -10,12 +10,21 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
+    <dialog class="delete-modal" id="modal">
+        <p class="dialog-title">Are you sure you want to delete:</p>
+        <p class="dialog-item">Zeeuwse platte oester</p>
+        <!-- <form action="/dish/id/" method="DIALOG"> -->
+        <form class="dialog-form" action="/dish/id/" method="POST">
+            <button>I am sure</button>
+        </form>
+        <button class="close-modal">No</button>
+    </dialog>
     <header>
         <div class="container">
             <nav>
                 <div class="logo"><img src="./img/logo.png" alt="Norevad logo"></div>
                     <ul class="nav-links">
-                        
+                         
                         <input type="checkbox" id="checkbox_toggle" />
                         <label for="checkbox_toggle" class="hamburger">&#9776;</label>
                         <div class="nav-menu">
@@ -34,7 +43,7 @@
             <h1>Menu</h1>
             <section class="menu-course">
                 <h2>Voorgerecht</h2>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="zefzzvzz">
                     <p class="menu-item-title">Zeeuwse platte oester</p>
                     <p class="menu-item-ingredients">appel - shiso - sudachi</p>
                     <div class="menu-item-details">
@@ -45,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="zghzrehrhrz">
                     <p class="menu-item-title">St-Jakobsvrucht 'Diepe'</p>
                     <p class="menu-item-ingredients">savooi - parmezaan - peterselie</p>
                     <div class="menu-item-details">
@@ -56,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="cnzrbrf">
                     <p class="menu-item-title">Kabeljauw Noordzee</p>
                     <p class="menu-item-ingredients">miso - aardpeer - champignon</p>
                     <div class="menu-item-details">
@@ -67,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="kgksgvsv">
                     <p class="menu-item-title">Langoustine 'Guilvinec</p>
                     <p class="menu-item-ingredients">verbena - edamame - courgette </p>
                     <div class="menu-item-details">
@@ -81,7 +90,7 @@
             </section>
             <section class="menu-course">
                 <h2>Hoofdgerecht</h2>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="sbsjfnhd">
                     <p class="menu-item-title">Zeeuwse platte oester</p>
                     <p class="menu-item-ingredients">appel - shiso - sudachi</p>
                     <div class="menu-item-details">
@@ -92,7 +101,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="zgzswgbsgs">
                     <p class="menu-item-title">St-Jakobsvrucht 'Diepe'</p>
                     <p class="menu-item-ingredients">savooi - parmezaan - peterselie</p>
                     <div class="menu-item-details">
@@ -103,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="sdgsgsdgdsgds">
                     <p class="menu-item-title">Kabeljauw Noordzee</p>
                     <p class="menu-item-ingredients">miso - aardpeer - champignon</p>
                     <div class="menu-item-details">
@@ -114,7 +123,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="menu-item">
+                <div class="menu-item" data-dish-id="sgdsgsgsg">
                     <p class="menu-item-title">Langoustine 'Guilvinec</p>
                     <p class="menu-item-ingredients">verbena - edamame - courgette </p>
                     <div class="menu-item-details">
@@ -154,5 +163,7 @@
             </section>
         </div>
     </footer>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
