@@ -18,3 +18,4 @@ btnsDelete.forEach((btnDelete) => {
 btnClose.addEventListener('click', () => {
   modal.close();
 });
+0;

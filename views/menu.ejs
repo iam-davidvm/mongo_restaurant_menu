@@ -1,5 +1,15 @@
 <%- include('partials/head') %> 
 
+<dialog class="delete-modal" id="modal">
+    <p class="dialog-title">Are you sure you want to delete:</p>
+    <p class="dialog-item">Zeeuwse platte oester</p>
+    <form class="dialog-form" action="/dish/id/" method="POST">
+        <button>I am sure</button>
+    </form>
+    <button class="close-modal">No</button>
+</dialog>
+<main>
+    <div class="container">
 <h1>Menu</h1>
             <div class="add-dish">
                 <a href="/dish/add">
@@ -34,7 +44,7 @@
                                     %>
                                     &euro;<%= price %></p>
                                 <div class="menu-item-admin">
-                                    <i class="fas fa-pen"></i>
+                                    <a href="/dish/edit/<%= voorgerecht._id %>"><i class="fas fa-pen"></i></a>
                                     <i class="fas fa-trash"></i>
                                 </div>
                             </div>
@@ -71,7 +81,7 @@
                                     %>
                                     &euro;<%= price %></p>
                                 <div class="menu-item-admin">
-                                    <i class="fas fa-pen"></i>
+                                    <a href="/dish/edit/<%= hoofdgerecht._id %>"><i class="fas fa-pen"></i></a>
                                     <i class="fas fa-trash"></i>
                                 </div>
                             </div>
@@ -108,7 +118,7 @@
                                     %>
                                     &euro;<%= price %></p>
                                 <div class="menu-item-admin">
-                                    <i class="fas fa-pen"></i>
+                                    <a href="/dish/edit/<%= dessert._id %>"><i class="fas fa-pen"></i></a>
                                     <i class="fas fa-trash"></i>
                                 </div>
                             </div>

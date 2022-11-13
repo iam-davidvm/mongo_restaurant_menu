@@ -195,7 +195,8 @@ footer {
   transition: color 270ms ease-in-out;
 }
 
-.menu-item-admin .fas:hover {
+.menu-item-admin .fas:hover,
+.menu-item-admin a:hover .fas {
   color: hsla(0, 0%, 0%, 1);
 }
 

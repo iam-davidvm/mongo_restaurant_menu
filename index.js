@@ -29,6 +29,12 @@ app.get('/menu', async (req, res) => {
   res.render('menu', { dishes });
 });
 
+app.delete('/dish/:id', async (req, res) => {
+  const { id } = req.params;
+  await Dish.findByIdAndDelete(id);
+  res.redirect('/menu');
+});
+
 app.listen(3000, () => {
   console.log('Listening to 3000');
 });
