@@ -275,6 +275,52 @@ footer .container {
   color: var(--clr-pri-red);
 }
 
+.new-form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.new-form label,
+.new-form input,
+.new-form select {
+  display: block;
+  width: 100%;
+}
+
+.new-form label {
+  margin: 15px 0 7px;
+}
+
+.new-form input,
+.new-form select {
+  height: 35px;
+}
+
+.new-form input {
+  padding: 0 5px;
+}
+
+.new-form button {
+  font-family: var(--fnt-bod);
+  font-size: 1rem;
+  margin-top: 50px;
+  cursor: pointer;
+  background-color: var(--clr-pri-red);
+  border: 2px solid var(--clr-pri-red);
+  color: white;
+  padding: 0.8em 1.8em;
+  border-radius: 1.2em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 270ms ease-in-out, color 270ms ease-in-out;
+}
+
+.new-form button:hover {
+  background-color: white;
+  color: var(--clr-pri-red);
+}
+
 /* RESPONSIVE */
 @media (max-width: 665px) {
   .nav-menu {

@@ -10,15 +10,6 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <dialog class="delete-modal" id="modal">
-        <p class="dialog-title">Are you sure you want to delete:</p>
-        <p class="dialog-item">Zeeuwse platte oester</p>
-        <!-- <form action="/dish/id/" method="DIALOG"> -->
-        <form class="dialog-form" action="/dish/id/" method="POST">
-            <button>I am sure</button>
-        </form>
-        <button class="close-modal">No</button>
-    </dialog>
     <header>
         <div class="container">
             <nav>
@@ -40,114 +31,31 @@
 
     <main>
         <div class="container">
-            <h1>Menu</h1>
-            <div class="add-dish">
-                <a href="/dish/add">
-                    <i class="fas fa-plus-circle"></i><span> Gerecht</span></a>
-            </div>
-
-            <section class="menu-course">
-                <h2>Voorgerecht</h2>
-                <div class="add-dish">
-                    <a href="/dish/add?type=entree">
-                        <i class="fas fa-plus-circle"></i><span> Voorgerecht</span></a>
+            <h1>New dish</h1>
+            <form class="new-form" action="/dish" method="POST">
+                <div class="form-element">
+                    <label for="course">Course:</label>
+                    <select name="course" id="course">
+                        <option value="voorgerecht">Voorgerecht</option>
+                        <option value="hoofdgerecht">Hoofdgerecht</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
                 </div>
-                <div class="menu-item" data-dishid="zefzzvzz">
-                    <p class="menu-item-title">Zeeuwse platte oester</p>
-                    <p class="menu-item-ingredients">appel - shiso - sudachi</p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;20.00</p>
-                        <div class="menu-item-admin">
-                            <a href="/dish/edit/id"><i class="fas fa-pen"></i></a>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
+                <div class="form-element">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name">
                 </div>
-                <div class="menu-item" data-dishid="zghzrehrhrz">
-                    <p class="menu-item-title">St-Jakobsvrucht 'Diepe'</p>
-                    <p class="menu-item-ingredients">savooi - parmezaan - peterselie</p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;16.50</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
+                <div class="form-element">
+                    <label for="ingredients">Ingredients:</label>
+                    <input type="text" name="ingredients" id="ingredients">
                 </div>
-                <div class="menu-item" data-dishid="cnzrbrf">
-                    <p class="menu-item-title">Kabeljauw Noordzee</p>
-                    <p class="menu-item-ingredients">miso - aardpeer - champignon</p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;15.00</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
+                <div class="form-element">
+                    <label for="price">Price:</label>
+                    <input type="number" name="price" id="price" step="0.05">
                 </div>
-                <div class="menu-item" data-dishid="kgksgvsv">
-                    <p class="menu-item-title">Langoustine 'Guilvinec</p>
-                    <p class="menu-item-ingredients">verbena - edamame - courgette </p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;21.50</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="menu-course">
-                <h2>Hoofdgerecht</h2>
-                <div class="add-dish">
-                    <a href="/dish/add?type=main">
-                        <i class="fas fa-plus-circle"></i><span> Hoofdgerecht</span></a>
-                </div>
-                <div class="menu-item" data-dishid="sbsjfnhd">
-                    <p class="menu-item-title">Zeeuwse platte oester</p>
-                    <p class="menu-item-ingredients">appel - shiso - sudachi</p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;20.00</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item" data-dishid="zgzswgbsgs">
-                    <p class="menu-item-title">St-Jakobsvrucht 'Diepe'</p>
-                    <p class="menu-item-ingredients">savooi - parmezaan - peterselie</p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;16.50</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item" data-dishid="sdgsgsdgdsgds">
-                    <p class="menu-item-title">Kabeljauw Noordzee</p>
-                    <p class="menu-item-ingredients">miso - aardpeer - champignon</p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;15.00</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item" data-dishid="sgdsgsgsg">
-                    <p class="menu-item-title">Langoustine 'Guilvinec</p>
-                    <p class="menu-item-ingredients">verbena - edamame - courgette </p>
-                    <div class="menu-item-details">
-                        <p class="menu-item-price">&euro;21.50</p>
-                        <div class="menu-item-admin">
-                            <i class="fas fa-pen"></i>
-                            <i class="fas fa-trash"></i>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                <button>Save</button>
+            </form>
+            
         </div>
     </main>
 
@@ -177,6 +85,6 @@
         </div>
     </footer>
 
-    <script src="./js/app.js"></script>
+    <script src="./js/new.js"></script>
 </body>
 </html>
