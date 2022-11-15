@@ -30,7 +30,14 @@ app.get('/menu', async (req, res) => {
 });
 
 app.get('/dish/add', (req, res) => {
-  res.render('new.ejs');
+  const type = req.query.type;
+  res.render('new.ejs', { type });
+});
+
+app.post('/dish', async (req, res) => {
+  const newDish = new Dish(req.body);
+  await newDish.save();
+  res.redirect('/menu');
 });
 
 app.delete('/dish/:id', async (req, res) => {
