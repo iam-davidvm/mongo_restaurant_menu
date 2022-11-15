@@ -23,6 +23,8 @@ https://user-images.githubusercontent.com/67807920/202041753-092fc4d0-74a9-4873-
 
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white 'MongoDB')
 
+![EJS](https://img.shields.io/badge/-EJS-purple 'EJS')
+
 ## What I have learned
 
 It was the first time creating a project with a database on my own. The main goal was to repeat what I have learned without looking at the tutorials (which I didn't have to do) and I tried to ignore the code I have written while following the introduction course. What I learned:
