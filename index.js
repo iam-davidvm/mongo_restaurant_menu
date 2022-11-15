@@ -29,6 +29,10 @@ app.get('/menu', async (req, res) => {
   res.render('menu', { dishes });
 });
 
+app.get('/dish/add', (req, res) => {
+  res.render('new.ejs');
+});
+
 app.delete('/dish/:id', async (req, res) => {
   const { id } = req.params;
   await Dish.findByIdAndDelete(id);

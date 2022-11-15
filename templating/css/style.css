@@ -300,7 +300,7 @@ footer .container {
   padding: 0 5px;
 }
 
-.new-form button {
+.new-form .btn-submit {
   font-family: var(--fnt-bod);
   font-size: 1rem;
   margin-top: 50px;
@@ -316,9 +316,42 @@ footer .container {
   transition: background-color 270ms ease-in-out, color 270ms ease-in-out;
 }
 
-.new-form button:hover {
+.new-form .btn-submit:hover {
   background-color: white;
   color: var(--clr-pri-red);
+}
+
+.new-form .add-ingredient,
+.new-form .delete-ingredient {
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: var(--clr-pri-red);
+  border: none;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 270ms ease-in-out;
+}
+
+.new-form .add-ingredient:hover,
+.new-form .delete-ingredient:hover {
+  opacity: 1;
+}
+
+.ingredients-input {
+  max-width: 300px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  animation: 270ms ease-in-out fade;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* RESPONSIVE */

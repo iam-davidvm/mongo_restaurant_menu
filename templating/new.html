@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,29 +31,34 @@
 
     <main>
         <div class="container">
-            <h1>New dish</h1>
+            <h1>Nieuw gerecht</h1>
             <form class="new-form" action="/dish" method="POST">
                 <div class="form-element">
-                    <label for="course">Course:</label>
-                    <select name="course" id="course">
+                    <label for="course">Gang:</label>
+                    <select name="course" id="course" required>
                         <option value="voorgerecht">Voorgerecht</option>
                         <option value="hoofdgerecht">Hoofdgerecht</option>
                         <option value="dessert">Dessert</option>
                     </select>
                 </div>
                 <div class="form-element">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name">
+                    <label for="name">Naam:</label>
+                    <input type="text" name="name" id="name" required>
                 </div>
                 <div class="form-element">
-                    <label for="ingredients">Ingredients:</label>
-                    <input type="text" name="ingredients" id="ingredients">
+                    <label for="ingredients">Ingrediënten:</label>
+                    <div class="ingredients-list">
+                        <div class="ingredients-input" data-ingredient="1">
+                            <input type="text" name="ingredients[]" placeholder="een ingrediënt" id="ingredients" required>
+                            <button class="add-ingredient" title="Ingrediënt toevoegen"><i class="fas fa-plus-circle"></i></button>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-element">
-                    <label for="price">Price:</label>
-                    <input type="number" name="price" id="price" step="0.05">
+                    <label for="price">Prijs:</label>
+                    <input type="number" name="price" id="price" step="0.05" required>
                 </div>
-                <button>Save</button>
+                <button class="btn-submit">Toevoegen</button>
             </form>
             
         </div>

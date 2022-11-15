@@ -14,8 +14,3 @@ btnsDelete.forEach((btnDelete) => {
     dialogItem.innerText = menuItem.innerText;
   });
 });
-
-btnClose.addEventListener('click', () => {
-  modal.close();
-});
-0;

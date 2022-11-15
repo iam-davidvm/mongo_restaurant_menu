@@ -275,6 +275,85 @@ footer .container {
   color: var(--clr-pri-red);
 }
 
+.new-form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.new-form label,
+.new-form input,
+.new-form select {
+  display: block;
+  width: 100%;
+}
+
+.new-form label {
+  margin: 15px 0 7px;
+}
+
+.new-form input,
+.new-form select {
+  height: 35px;
+}
+
+.new-form input {
+  padding: 0 5px;
+}
+
+.new-form .btn-submit {
+  font-family: var(--fnt-bod);
+  font-size: 1rem;
+  margin-top: 50px;
+  cursor: pointer;
+  background-color: var(--clr-pri-red);
+  border: 2px solid var(--clr-pri-red);
+  color: white;
+  padding: 0.8em 1.8em;
+  border-radius: 1.2em;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 270ms ease-in-out, color 270ms ease-in-out;
+}
+
+.new-form .btn-submit:hover {
+  background-color: white;
+  color: var(--clr-pri-red);
+}
+
+.new-form .add-ingredient,
+.new-form .delete-ingredient {
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: var(--clr-pri-red);
+  border: none;
+  cursor: pointer;
+  opacity: 0.65;
+  transition: opacity 270ms ease-in-out;
+}
+
+.new-form .add-ingredient:hover,
+.new-form .delete-ingredient:hover {
+  opacity: 1;
+}
+
+.ingredients-input {
+  max-width: 300px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  animation: 270ms ease-in-out fade;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 665px) {
   .nav-menu {
