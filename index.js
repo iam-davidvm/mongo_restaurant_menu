@@ -34,9 +34,41 @@ app.get('/dish/add', (req, res) => {
   res.render('new.ejs', { type });
 });
 
-app.post('/dish', async (req, res) => {
-  const newDish = new Dish(req.body);
+app.post('/dish/new', async (req, res) => {
+  const { course, name, ingredients, price } = req.body;
+  const lowerIngredients = ingredients.map((ingredient) => {
+    return ingredient.toLowerCase();
+  });
+  const newDish = new Dish({
+    course,
+    name,
+    ingredients: lowerIngredients,
+    price,
+  });
   await newDish.save();
+  res.redirect('/menu');
+});
+
+app.get('/dish/edit/:id', async (req, res) => {
+  const { id } = req.params;
+
+  const dish = await Dish.findById(id);
+  res.render('edit', { dish });
+});
+
+app.patch('/dish/edit/:id', async (req, res) => {
+  const { id } = req.params;
+  const { course, name, ingredients, price } = req.body;
+  const lowerIngredients = ingredients.map((ingredient) => {
+    return ingredient.toLowerCase();
+  });
+  const dish = await Dish.findByIdAndUpdate(
+    id,
+    { course, name, ingredients: lowerIngredients, price },
+    {
+      runValidators: true,
+    }
+  );
   res.redirect('/menu');
 });
 

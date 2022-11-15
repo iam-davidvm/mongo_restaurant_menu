@@ -1,33 +1,39 @@
 <%- include('partials/head') %> 
 <main>
     <div class="container">
-        <h1>Nieuw gerecht</h1>
-        <form class="new-form" action="/dish" method="POST">
+        <h1>Pas gerecht aan</h1>
+        <form class="new-form" action="/dish/edit/<%= dish._id %>?_method=PATCH" method="POST">
             <div class="form-element">
                 <label for="course">Gang:</label>
                 <select name="course" id="course" required>
                     
-                    <option value="voorgerecht" <%= type === 'voorgerecht' ? 'selected' : '' %>>Voorgerecht</option>
-                    <option value="hoofdgerecht" <%= type === 'hoofdgerecht' ? 'selected' : '' %>>Hoofdgerecht</option>
-                    <option value="dessert" <%= type === 'dessert' ? 'selected' : '' %>>Dessert</option>
+                    <option value="voorgerecht" <%= dish.course === 'voorgerecht' ? 'selected' : '' %>>Voorgerecht</option>
+                    <option value="hoofdgerecht" <%= dish.course === 'hoofdgerecht' ? 'selected' : '' %>>Hoofdgerecht</option>
+                    <option value="dessert" <%= dish.course === 'dessert' ? 'selected' : '' %>>Dessert</option>
                 </select>
             </div>
             <div class="form-element">
                 <label for="name">Naam:</label>
-                <input type="text" name="name" id="name" required>
+                <input type="text" name="name" id="name" value="<%= dish.name %>" required>
             </div>
             <div class="form-element">
                 <label for="ingredients">Ingrediënten:</label>
                 <div class="ingredients-list">
-                    <div class="ingredients-input" data-ingredient="1">
-                        <input type="text" name="ingredients[]" placeholder="een ingrediënt" id="ingredients" required>
-                        <button class="add-ingredient" title="Ingrediënt toevoegen"><i class="fas fa-plus-circle"></i></button>
-                    </div>
+                    <% for (let i = 1; i <= dish.ingredients.length; i++) { %>
+                        <div class="ingredients-input" data-ingredient="<%= i %>>">
+                            <input type="text" name="ingredients[]" placeholder="een ingrediënt" id="ingredients" value="<%= dish.ingredients[i-1] %>" required>
+                            <% if (i === dish.ingredients.length) { %>
+                            <button class="add-ingredient" title="Ingrediënt toevoegen"><i class="fas fa-plus-circle"></i></button>
+                            <% if (i !== 1) { %>
+                                <button class="delete-ingredient" title="Ingrediënt verwijderen"><i class="fas fa-minus-circle"></i></button>
+                            <% } } %>
+                        </div>
+                    <% } %>
                 </div>
             </div>
             <div class="form-element">
                 <label for="price">Prijs:</label>
-                <input type="number" name="price" id="price" step="0.05" required>
+                <input type="number" name="price" id="price" step="0.05" value="<%= dish.price %>" required>
             </div>
             <button class="btn-submit">Toevoegen</button>
         </form>
@@ -35,6 +41,6 @@
 <%- include('partials/footer') %> 
 
 
-<script src="../js/new.js"></script>
+<script src="../../js/new.js"></script>
 </body>
 </html>
