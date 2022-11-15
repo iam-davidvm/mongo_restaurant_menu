@@ -7,8 +7,7 @@
 
 Because I didn't learn about authentication and deploying such website, I made a screen capture of my localhost:
 
-[screen-capture.webm](https://user-images.githubusercontent.com/67807920/202040874-48015455-2de2-499b-b3c9-8770a73a7d14.webm)
-![Live](/screenshots/screen-capture.mp4 'Live View')
+[screen-capture.webm](hhttps://github.com/iam-davidvm/mongo_restaurant_menu/blob/main/screenshots/screen-capture.webm)
 
 ## Built With
 
