@@ -7,40 +7,42 @@
 
 Because I didn't learn about authentication and deploying such website, I made a screen capture of my localhost:
 
-[screen-capture.webm](hhttps://github.com/iam-davidvm/mongo_restaurant_menu/blob/main/screenshots/screen-capture.webm)
+https://user-images.githubusercontent.com/67807920/202041753-092fc4d0-74a9-4873-abdf-92754584479d.mp4
 
 ## Built With
 
-![HTML](https://img.shields.io/badge/-HTML-orange 'HTML')
+![HTML](https://img.shields.io/badge/HTML-f16428?style=for-the-badge&logo=html5&logoColor=white 'HTML')
 
-![CSS](https://img.shields.io/badge/-CSS-blue 'CSS')
+![CSS](https://img.shields.io/badge/CSS-1572b6?&style=for-the-badge&logo=css3&logoColor=white 'CSS')
 
-![JavaScript](https://img.shields.io/badge/-JavaScript-yellow 'JavaScript')
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black 'JavaScript')
+
+![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white 'NodeJS')
+
+![ExpressJS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge 'ExpressJS')
+
+![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white 'MongoDB')
 
 ## What I have learned
 
-This was very fun project to work on and it allowed me to work with several things for the first time:
+It was the first time creating a project with a database on my own. The main goal was to repeat what I have learned without looking at the tutorials (which I didn't have to do) and I tried to ignore the code I have written while following the introduction course. What I learned:
 
-- LocalStorage
+- More about the dialog element
 
-- Animations/keyframes
+- How to collect multiple items for an array with a html form
 
-- Creating a custom radiobutton
-
-- Thinking about a game mechanic
+- Working with MongoDB, ExpressJS in general
 
 ## Things I may change in the future
 
-- Making it a bit more dynamic like adding a sort of animation when you hover over a tile
+- As I already said, there is no security implemented at all, which wouldn't be the best move :)
 
-- Expanding the statistics. I don't think it will be very difficult, but I didn't want to copy Wordle too much
+- Some sort of authentication, where a non-authenticated user just sees the menu. And a certain role can see the add/edit/delete functionalities
 
-- When the game reveals if you win or lose it's a bit too simple
+- If I add a dish it appears at the bottom of the list. It would be nice if a user could edit the order
 
-- Refactor: although it runs smooth, I think there is room to improve the code at every front: html, css and js
-
-- Adding a favicon
+- The input list for the array of ingredients could be better.
 
 ## Conclusion
 
-> This is not something I would deliver to a client, but it was a great learning process
+> It was nice to discover how mongoDB works and what is possible even with limited knowledge.
