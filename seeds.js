@@ -12,6 +12,10 @@ mongoose
     console.log(err);
   });
 
+(async () => {
+  await Dish.deleteMany({});
+})();
+
 const seedDishes = [
   {
     name: 'Zeeuwse platte oester',

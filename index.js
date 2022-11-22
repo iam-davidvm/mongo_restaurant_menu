@@ -78,6 +78,10 @@ app.delete('/dish/:id', async (req, res) => {
   res.redirect('/menu');
 });
 
+app.use((err, req, res, next) => {
+  console.log(err);
+});
+
 app.listen(3000, () => {
   console.log('Listening to 3000');
 });
