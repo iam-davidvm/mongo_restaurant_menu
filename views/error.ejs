@@ -2,11 +2,12 @@
 <main>
     <div class="error">
         <div class="error-box">
-            <p class="error-title">404 - Page not Found</p>
-            <p class="error-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam dolores distinctio illo facilis, ratione maiores labore dicta dignissimos itaque. Totam exercitationem autem fugiat? Excepturi, eos sequi! Voluptatum ratione at dolor.</p>
+            <p class="error-title"><%= err.message %></p>
+            <!-- <p class="error-description">Oops, something went wrong. Try again or contact us.</p> -->
+            <p class="error-description"><%= err.stack %></p>
         </div>
-        
-<%- include('partials/footer') %> 
+        </div>  
+    </main>
 
 
 </body>
