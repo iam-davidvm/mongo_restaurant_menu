@@ -14,7 +14,7 @@ const { dishSchema } = require('./schemas');
 const Dish = require('./models/dish');
 
 mongoose
-  .connect('mongodb://localhost:27017/restaurantApp')
+  .connect('mongodb://127.0.0.1:27017/restaurantApp')
   .then(() => {
     console.log('Connected');
   })
@@ -22,6 +22,7 @@ mongoose
     console.log('Oops, something went wrong');
     console.log(err);
   });
+mongoose.set('strictQuery', false);
 
 app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
